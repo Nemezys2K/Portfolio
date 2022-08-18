@@ -2,9 +2,12 @@ const express = require('express');
 
 const app = express();
 
-const router = require('./src/router');
-app.use('/pessoas', router);
+const pessoaRouter = require('./src/routers/PessoasRouter');
+app.use('/pessoas', pessoaRouter);
 // app.use('/musicas', router);
+const musicRouter = require('./src/routers/MusicRouter');
+app.use('/music',musicRouter)
+
 
 
 
