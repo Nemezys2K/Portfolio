@@ -1,6 +1,4 @@
-
 const PessoasController = {
-
     listarPessoas: (req, res) => {
 
         // Carregar o array de database/pessoas.json 
