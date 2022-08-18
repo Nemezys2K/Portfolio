@@ -1,29 +1,15 @@
+// Importar o express
 const express = require('express');
 
+// Criar o roteador
 const router = express.Router();
 
-router.get('/',(req,res)=>{
-    // res.send("Ola usuário!");
-    const pessoas = require('./database/pessoas.json');
-})
+// Importar o controller
+const PessoasController = require("./controllers/PessoasController");
 
-router.get('/:id', (req,res)=>{
-    // res.send("Outro texto!");
-    const id = req.params.id;
+// Definir/criar as rotas no roteador
+router.get('/', PessoasController.listarPessoas);
+router.get('/:id', PessoasController.mostrarPessoa);
 
-    const pessoas = require('./database/pessoas.json')
-    const pessoa = pessoas.find(p => p.id == id);
-
-    if (pessoa == undefined){
-        res.send("Pessoa inexistente");
-    }else{
-        res.send(pessoa);
-    }
-})
-
-// router.get('/musica',(req,res)=>{
-
-//     const musicas = require('./database/musicas.json')
-// })
-
+// Exportar esse roteador
 module.exports = router;
