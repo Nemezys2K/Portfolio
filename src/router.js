@@ -2,11 +2,12 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/',(req,res)=>{
+router.get('/clientes',(req,res)=>{
     res.send("Ola usuário!");
+
 })
 
-router.get('/about', (req,res)=>{
-    res.send("Outro texto!");
+router.get('/:id', (req,res)=>{
+    // res.send("Outro texto!");
 })
 module.exports = router;
