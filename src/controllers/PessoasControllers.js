@@ -1,4 +1,5 @@
 const PessoasController = {
+
     listarPessoas: (req, res) => {
 
         // Carregar o array de database/pessoas.json 
@@ -25,7 +26,7 @@ const PessoasController = {
             res.send(pessoa);
         }
     }
-
 }
 
 module.exports = PessoasController;
+
